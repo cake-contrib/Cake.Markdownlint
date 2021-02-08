@@ -1,17 +1,15 @@
-#load nuget:?package=Cake.Recipe&version=1.0.0
+#load nuget:?package=Cake.Recipe&version=2.1.0
 
 Environment.SetVariableNames();
 
 BuildParameters.SetParameters(
-    context: Context, 
+    context: Context,
     buildSystem: BuildSystem,
     sourceDirectoryPath: "./src",
     title: "Cake.Markdownlint",
     repositoryOwner: "cake-contrib",
     repositoryName: "Cake.Markdownlint",
-    appVeyorAccountName: "cakecontrib",
-    shouldRunGitVersion: true,
-    shouldRunCodecov: false);
+    appVeyorAccountName: "cakecontrib");
 
 BuildParameters.PrintParameters(Context);
 
