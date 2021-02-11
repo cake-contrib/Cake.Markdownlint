@@ -3,7 +3,7 @@
 Environment.SetVariableNames();
 
 BuildParameters.SetParameters(
-    context: Context, 
+    context: Context,
     buildSystem: BuildSystem,
     sourceDirectoryPath: "./src",
     title: "Cake.Markdownlint",
@@ -18,7 +18,7 @@ BuildParameters.PrintParameters(Context);
 ToolSettings.SetToolSettings(
     context: Context,
     dupFinderExcludePattern: new string[] { BuildParameters.RootDirectoryPath + "/src/Cake.Markdownlint.Tests/*.cs" },
-    testCoverageFilter: "+[*]* -[xunit.*]* -[Cake.Core]* -[Cake.Testing]* -[*.Tests]* -[Shouldly]*",
+    testCoverageFilter: "+[*]* -[xunit.*]* -[Cake.Core]* -[Cake.Testing]* -[*.Tests]* -[Shouldly]* -[DiffEngine]*",
     testCoverageExcludeByAttribute: "*.ExcludeFromCodeCoverage*",
     testCoverageExcludeByFile: "*/*Designer.cs;*/*.g.cs;*/*.g.i.cs");
 
