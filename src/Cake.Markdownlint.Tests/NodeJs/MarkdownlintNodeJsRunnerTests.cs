@@ -54,6 +54,17 @@
 
                 result.Args.ShouldBe("-o \"c:/foo.log\" \"c:/directory-to-lint\"");
             }
+
+            [Fact]
+            public void JsonFormatArgument_Should_Be_Added_If_Settings_Are_Passed()
+            {
+                var fixture = new MarkdownlintNodeJsRunnerFixture();
+                fixture.Settings.JsonFormat = true;
+
+                var result = fixture.Run();
+
+                result.Args.ShouldBe("\"c:/directory-to-lint\" -j");
+            }
         }
     }
 }
