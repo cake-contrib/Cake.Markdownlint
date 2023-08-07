@@ -30,7 +30,7 @@ for i in "$@"; do
         -t|--target) TARGET="$2"; shift ;;
         -c|--configuration) CONFIGURATION="$2"; shift ;;
         -v|--verbosity) VERBOSITY="$2"; shift ;;
-        -d|--dryrun) DRYRUN="-dryrun" ;;
+        -d|--dryrun) DRYRUN="--dryrun" ;;
         --) shift; SCRIPT_ARGUMENTS+=("$@"); break ;;
         *) SCRIPT_ARGUMENTS+=("$1") ;;
     esac
