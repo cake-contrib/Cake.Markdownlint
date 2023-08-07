@@ -42,6 +42,11 @@
         public FilePath OutputFile { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether the log file is written in json format or not.
+        /// </summary>
+        public bool JsonFormat { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether an exception should be thrown if an issues was
         /// detected.
         /// </summary>
@@ -91,6 +96,11 @@
             if (this.directory != null)
             {
                 args.AppendQuoted(this.directory.FullPath);
+            }
+
+            if (this.JsonFormat)
+            {
+                args.Append("-j");
             }
         }
     }
