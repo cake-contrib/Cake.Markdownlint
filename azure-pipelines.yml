@@ -16,13 +16,17 @@ jobs:
   steps:
   - task: UseDotNet@2
     inputs:
-      version: '2.1.x'
-    displayName: 'Install .NET Core 2.1'
+      version: '3.1.x'
+    displayName: 'Install .NET Core 3.1'
   # .NET 5 required for GitVersion
   - task: UseDotNet@2
     inputs:
       version: '5.x'
     displayName: 'Install .NET 5'
+  - task: UseDotNet@2
+    inputs:
+      version: '6.x'
+    displayName: 'Install .NET 6'
   - powershell: |
       $ENV:CAKE_SKIP_GITVERSION=([string]::IsNullOrEmpty($ENV:SYSTEM_PULLREQUEST_PULLREQUESTID) -eq $False).ToString()
       .\build.ps1
@@ -34,13 +38,17 @@ jobs:
   steps:
   - task: UseDotNet@2
     inputs:
-      version: '2.1.x'
-    displayName: 'Install .NET Core 2.1'
+      version: '3.1.x'
+    displayName: 'Install .NET Core 3.1'
   # .NET 5 required for GitVersion
   - task: UseDotNet@2
     inputs:
       version: '5.x'
     displayName: 'Install .NET 5'
+  - task: UseDotNet@2
+    inputs:
+      version: '6.x'
+    displayName: 'Install .NET 6'
   - bash: |
       ./build.sh
     displayName: 'Cake Build'
@@ -50,13 +58,17 @@ jobs:
   steps:
   - task: UseDotNet@2
     inputs:
-      version: '2.1.x'
-    displayName: 'Install .NET Core 2.1'
+      version: '3.1.x'
+    displayName: 'Install .NET Core 3.1'
   # .NET 5 required for GitVersion
   - task: UseDotNet@2
     inputs:
       version: '5.x'
     displayName: 'Install .NET 5'
+  - task: UseDotNet@2
+    inputs:
+      version: '6.x'
+    displayName: 'Install .NET 6'
   - bash: |
       ./build.sh --verbosity diagnostic
     displayName: 'Cake Build'
