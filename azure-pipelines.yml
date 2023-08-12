@@ -14,10 +14,6 @@ jobs:
   pool:
     vmImage: 'windows-2022'
   steps:
-  - task: UseDotNet@2
-    inputs:
-      version: '3.1.x'
-    displayName: 'Install .NET Core 3.1'
   # .NET 5 required for GitVersion
   - task: UseDotNet@2
     inputs:
@@ -27,6 +23,10 @@ jobs:
     inputs:
       version: '6.x'
     displayName: 'Install .NET 6'
+  - task: UseDotNet@2
+    inputs:
+      version: '7.x'
+    displayName: 'Install .NET 7'
   - powershell: |
       $ENV:CAKE_SKIP_GITVERSION=([string]::IsNullOrEmpty($ENV:SYSTEM_PULLREQUEST_PULLREQUESTID) -eq $False).ToString()
       .\build.ps1
@@ -36,10 +36,6 @@ jobs:
   pool:
     vmImage: 'macOS-11'
   steps:
-  - task: UseDotNet@2
-    inputs:
-      version: '3.1.x'
-    displayName: 'Install .NET Core 3.1'
   # .NET 5 required for GitVersion
   - task: UseDotNet@2
     inputs:
@@ -49,6 +45,10 @@ jobs:
     inputs:
       version: '6.x'
     displayName: 'Install .NET 6'
+  - task: UseDotNet@2
+    inputs:
+      version: '7.x'
+    displayName: 'Install .NET 7'
   - bash: |
       ./build.sh
     displayName: 'Cake Build'
@@ -56,10 +56,6 @@ jobs:
   pool:
     vmImage: 'ubuntu-20.04'
   steps:
-  - task: UseDotNet@2
-    inputs:
-      version: '3.1.x'
-    displayName: 'Install .NET Core 3.1'
   # .NET 5 required for GitVersion
   - task: UseDotNet@2
     inputs:
@@ -69,6 +65,10 @@ jobs:
     inputs:
       version: '6.x'
     displayName: 'Install .NET 6'
+  - task: UseDotNet@2
+    inputs:
+      version: '7.x'
+    displayName: 'Install .NET 7'
   - bash: |
       ./build.sh --verbosity diagnostic
     displayName: 'Cake Build'
