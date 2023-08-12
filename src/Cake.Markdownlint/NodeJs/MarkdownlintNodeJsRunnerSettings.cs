@@ -10,8 +10,8 @@
     /// </summary>
     public class MarkdownlintNodeJsRunnerSettings : ToolSettings
     {
-        private FilePath file;
-        private DirectoryPath directory;
+        private readonly FilePath file;
+        private readonly DirectoryPath directory;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MarkdownlintNodeJsRunnerSettings"/> class.
