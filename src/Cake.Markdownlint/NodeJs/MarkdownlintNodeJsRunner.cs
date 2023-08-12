@@ -94,7 +94,6 @@
         {
             // Don't throw an exit code.
             // We handle behavior ourselves in the post action.
-            return;
         }
     }
 }
