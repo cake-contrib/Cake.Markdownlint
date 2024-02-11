@@ -27,6 +27,10 @@ jobs:
     inputs:
       version: '7.x'
     displayName: 'Install .NET 7'
+  - task: UseDotNet@2
+    inputs:
+      version: '8.x'
+    displayName: 'Install .NET 8'
   - powershell: |
       $ENV:CAKE_SKIP_GITVERSION=([string]::IsNullOrEmpty($ENV:SYSTEM_PULLREQUEST_PULLREQUESTID) -eq $False).ToString()
       .\build.ps1
@@ -49,6 +53,10 @@ jobs:
     inputs:
       version: '7.x'
     displayName: 'Install .NET 7'
+  - task: UseDotNet@2
+    inputs:
+      version: '8.x'
+    displayName: 'Install .NET 8'
   - bash: |
       ./build.sh
     displayName: 'Cake Build'
@@ -69,6 +77,10 @@ jobs:
     inputs:
       version: '7.x'
     displayName: 'Install .NET 7'
+  - task: UseDotNet@2
+    inputs:
+      version: '8.x'
+    displayName: 'Install .NET 8'
   - bash: |
       ./build.sh --verbosity diagnostic
     displayName: 'Cake Build'
