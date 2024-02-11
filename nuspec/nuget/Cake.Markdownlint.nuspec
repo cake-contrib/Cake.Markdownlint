@@ -27,5 +27,8 @@ This addin for Cake allows you to lint Markdown files using markdownlint.
     <file src="net7.0\Cake.Markdownlint.dll" target="lib\net7.0" />
     <file src="net7.0\Cake.Markdownlint.pdb" target="lib\net7.0" />
     <file src="net7.0\Cake.Markdownlint.xml" target="lib\net7.0" />
+    <file src="net8.0\Cake.Markdownlint.dll" target="lib\net8.0" />
+    <file src="net8.0\Cake.Markdownlint.pdb" target="lib\net8.0" />
+    <file src="net8.0\Cake.Markdownlint.xml" target="lib\net8.0" />
   </files>
 </package>
